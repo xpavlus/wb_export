@@ -32,10 +32,9 @@ class APIRequest:
             headers=self.__header,
             params=param
         )
-        if _response.ok:
-            return _response
-        else:
-            return False
+        if _response.status_code == 429:
+            raise APITechBreak()
+        return _response
 
     def get_json(self, path, param=None):
         _response = self._get(path, param)
@@ -46,4 +45,8 @@ class APIRequest:
 
 
 class APIRequestException(Exception):
+    pass
+
+
+class APITechBreak(APIRequestException):
     pass

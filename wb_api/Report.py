@@ -1,7 +1,8 @@
 import os
 from datetime import timedelta, datetime
 from mongo.db import DB
-from wb_api.APIRequest import APIRequest
+from wb_api.APIRequest import *
+
 
 df_records_map = {"№": "rrd_id",
                           "Номер поставки": "gi_id",
@@ -46,4 +47,11 @@ class Reports:
             "dateFrom": _now + timedelta(-_now.weekday(), weeks=-1),
             "dateTo": _now + timedelta(-_now.weekday() - 1)
         }
-        return _wb_api.get_json(cls._uri_path, param=_param)
+        try:
+            return _wb_api.get_json(cls._uri_path, param=_param)
+        except APITechBreak:
+            raise ReportException("Технологический перерыв в WB")
+
+
+class ReportException(Exception):
+    pass
