@@ -41,7 +41,7 @@ class APIRequest:
         if _response.ok:
             return _response.json()
         else:
-            return False
+            return []
 
 
 class APIRequestException(Exception):
