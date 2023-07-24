@@ -1,0 +1,19 @@
+### Отчеты за период
+GET https://statistics-api-sandbox.wildberries.ru/api/v1/supplier/reportDetailByPeriod?dateFrom=2023-06-12T00%3A00%3A00&dateTo=2023-06-18T23%3A59%3A59&limit=100000
+Authorization: {{wb-token-stat}}
+
+<> 2023-06-28T211701.200.json
+
+### Заказы за день
+GET https://statistics-api.wildberries.ru/api/v1/supplier/orders?dateFrom=2023-03-10T23%3A59%3A59
+Authorization: {{wb-token-stat}}
+
+<> 2023-06-28T211704.200.json
+
+### Заказы поставщика за период
+GET https://statistics-api.wildberries.ru/api/v1/supplier/orders?dateFrom=2023-03-10T23%3A59%3A59
+Authorization: {{wb-token-stat}}
+
+<> 2023-06-28T213235.200.json
+
+###

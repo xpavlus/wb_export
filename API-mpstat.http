@@ -1,0 +1,15 @@
+### Продажи за день
+GET https://mpstats.io/api/wb/get/item/148647072/balance_by_day?d=2023-06-22
+X-Mpstats-TOKEN: {{mpstat-token}}
+Content-Type: application/json
+
+<> 2023-06-28T213218.200.json
+
+### История позиций по категориям
+GET https://mpstats.io/api/wb/get/item/148647072/by_category?d1=2023-06-21?d2=2023-06-22
+X-Mpstats-TOKEN: {{mpstat-token}}
+Content-Type: application/json
+
+<> 2023-06-28T210512.200.json
+
+###
